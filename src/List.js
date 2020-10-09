@@ -16,7 +16,7 @@ import {
   Divider,
   Box
 } from "@material-ui/core";
-import { ExpandMore as ExpandMoreIcon, Pets } from "@material-ui/icons";
+import { ExpandMore as ExpandMoreIcon, Pets, Search } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   Accordion_a: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 });
 const MyList = (props) => {
   const classes = useStyles();
-  const { breedName, setBreedName,setValue } = props;
+  const { breedName, setBreedName, setValue } = props;
   const [breeds, setBreeds] = useState(undefined);
 
   const [expandedPanel, setExpandedPanel] = useState(false);
@@ -44,8 +44,12 @@ const MyList = (props) => {
     });
   }, []);
 
+
+
+
   return (
     <>
+ 
       {breeds ? (
         Object.keys(breeds).map((key, i) => {
           return (
@@ -55,7 +59,7 @@ const MyList = (props) => {
               onClick={() => {
                 setBreedName(key);
               }}
-              expanded={expandedPanel === key} 
+              expanded={expandedPanel === key}
               onChange={handleAccordionChange(key)}
             >
               <AccordionSummary
@@ -84,17 +88,21 @@ const MyList = (props) => {
                             <Pets />
                           </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={breed} />                       
+                        <ListItemText primary={breed} />
                       </ListItem>
                     ))
-                  )}              
+                  )}
                 </List>
               </AccordionDetails>
               <Divider />
               <Box p={2}>
-                  <Button variant="contained" color="secondary" onClick={() => setValue(1)} >
-                    Select
-                  </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => setValue(1)}
+                >
+                  Select
+                </Button>
               </Box>
             </Accordion>
           );
