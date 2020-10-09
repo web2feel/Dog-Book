@@ -16,12 +16,7 @@ import {
   Divider,
   Box,
 } from "@material-ui/core";
-<<<<<<< HEAD
 import { ExpandMore as ExpandMoreIcon, Pets, Search } from "@material-ui/icons";
-=======
-import AutoSearchComplete from "./components/AutoSearchComplete";
-import { ExpandMore as ExpandMoreIcon, Pets } from "@material-ui/icons";
->>>>>>> 94c6537926f090cbe446203bdf3548c6ccdfd486
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   Accordion_a: {
@@ -60,25 +55,6 @@ const MyList = (props) => {
 
   return (
     <>
-<<<<<<< HEAD
- 
-      {breeds ? (
-        Object.keys(breeds).map((key, i) => {
-          return (
-            <Accordion
-              key={i}
-              style={{ margin: "1rem" }}
-              onClick={() => {
-                setBreedName(key);
-              }}
-              expanded={expandedPanel === key}
-              onChange={handleAccordionChange(key)}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="key"
-=======
       <Grid container justify="flex-end">
         <Grid item xs="12" md="4">
           <AutoSearchComplete
@@ -106,49 +82,12 @@ const MyList = (props) => {
                 }}
                 expanded={expandedPanel === key}
                 onChange={handleAccordionChange(key)}
->>>>>>> 94c6537926f090cbe446203bdf3548c6ccdfd486
               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="key"
                 >
-<<<<<<< HEAD
-                  {key}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <List>
-                  {breeds[key].length === 0 ? (
-                    <Typography>No Sub-Breads</Typography>
-                  ) : (
-                    breeds[key].map((breed) => (
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar>
-                            <Pets />
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary={breed} />
-                      </ListItem>
-                    ))
-                  )}
-                </List>
-              </AccordionDetails>
-              <Divider />
-              <Box p={2}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => setValue(1)}
-                >
-                  Select
-                </Button>
-              </Box>
-            </Accordion>
-          );
-        })
-=======
                   <Typography
                     style={{ textTransform: "capitalize" }}
                     className={
@@ -191,7 +130,6 @@ const MyList = (props) => {
               </Accordion>
             );
           })
->>>>>>> 94c6537926f090cbe446203bdf3548c6ccdfd486
       ) : (
         <Grid
           container
