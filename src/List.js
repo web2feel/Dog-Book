@@ -16,7 +16,8 @@ import {
   Divider,
   Box,
 } from "@material-ui/core";
-import { ExpandMore as ExpandMoreIcon, Pets, Search } from "@material-ui/icons";
+import AutoSearchComplete from "./components/AutoSearchComplete";
+import { ExpandMore as ExpandMoreIcon, Pets } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   Accordion_a: {
@@ -49,9 +50,6 @@ const MyList = (props) => {
       setBreeds(response.data.message);
     });
   }, [searchValue]);
-
-
-
 
   return (
     <>
